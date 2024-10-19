@@ -1,4 +1,8 @@
 # FrontEndTechnomist
+<p align="center">
+<a href="https://www.youtube.com/watch?v=O1oEGcQJSn0"><img src="https://github.com/Jonathan-Romano/Jonathan-Romano/blob/main/assets/TechnoMist.jpg" style="height: 75%; width:75%;"/></center></a></p>
+
+>Descripción: Imagen ilustrativa implementando el front-end
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
 
