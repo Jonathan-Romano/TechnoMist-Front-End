@@ -1,0 +1,37 @@
+<app-progress-bar *ngIf="loading"></app-progress-bar>
+<div class="row mt-1 ">
+    <div class="col-lg-4 offset-lg-5">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 20rem; border-radius: 10px;">
+            <div class="card-header">{{operacion}} producto</div>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="saveProduct()">
+                    <input formControlName="name" type="text" class="form-control radius-per"  placeholder="ingrese nombre" >
+                    <span *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched">
+                        El campo nombre es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="code" type="text" class="form-control mt-2 radius-per"  placeholder="ingrese codigo" >
+                    <span *ngIf="form.get('code')?.hasError('required') && form.get('code')?.touched">
+                        El campo codigo es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="marc" type="text" class="form-control mt-2 radius-per"  placeholder="ingrese marca" >
+                    <span *ngIf="form.get('marc')?.hasError('required') && form.get('marc')?.touched">
+                        El campo marca es <strong>requerido</strong>
+                    </span>
+                    <input formControlName="price" type="number" class="form-control mt-2 radius-per"  placeholder="ingrese precio" >
+                    <span *ngIf="form.get('price')?.hasError('required') && form.get('price')?.touched">
+                        El campo precio es <strong>requerido</strong>
+                    </span>
+                    <div class="row mt-2 text-center">
+                        <div class="col-lg-6">
+                            <button routerLink="/" type="button" class="btn btn-secondary radius-per">Volver</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button [disabled]="form.invalid" type="submit" class="btn btn-primary radius-per">Aceptar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div> 
+    </div>
+</div>
+

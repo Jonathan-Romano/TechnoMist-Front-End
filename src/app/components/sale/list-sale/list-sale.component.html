@@ -1,0 +1,31 @@
+<app-progress-bar *ngIf="loading"></app-progress-bar>
+<div *ngIf="!loading" class="container">
+    <div class="title">
+        <h4>Listado de ventas</h4>
+    </div>
+    <table *ngIf="sales.length > 0" class="table table-hover ">
+        <thead>
+          <tr>
+            <th scope="col ">ID</th>
+            <th scope="col">fecha</th>
+            <th scope="col">Carrito ID</th>
+            <th scope="col">Precio Total</th>
+          </tr>
+        </thead>
+        <tbody  *ngFor="let sale of sales">  
+          <tr class="table-secondary" >
+            <th scope="row">{{sale.id}}</th>
+            <td>{{sale.date}}</td>
+            <td>{{sale.cart.id}}</td>
+            <td>${{sale.cart.precioTotal}}</td>
+            <td class="p-2 text-nowrap" style="width: 1%; white-space: nowrap;">
+                <div class="btn-group" >
+                    <button (click)="sendSale(sale)" type="button" class="btn btn-primary btn-sm ms-2 radius-per" routerLink="{{sale.id}}">Ver productos</button>
+                    <button (click)="deleteSale(sale.id)" type="button" class="btn btn-danger btn-sm ms-2 radius-per" routerLink="/sale"> <i class="fa fa-trash"></i></button> 
+               </div>
+            </td>
+          </tr>         
+        </tbody>
+      </table>
+      <h5 *ngIf="sales.length == 0"> No hay ventas para mostrar</h5>
+</div>

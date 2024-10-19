@@ -1,0 +1,80 @@
+<div class="container mt-3">
+  <h5>mi carrito</h5>
+  <hr/>
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Codigo</th>
+                  <th scope="col">Marca</th>
+                  <th scope="col">Precio</th>
+                  @if(products.length > 0){ 
+                  <th scope="col">Accion</th>
+                  }
+                </tr>
+              </thead>
+              <tbody *ngFor="let product of products">  
+                <tr class="table-secondary " >
+                  <th scope="row">{{product.idP}}</th>
+                  <td>{{product.nombre}}</td>
+                  <td>{{product.codigo}}</td>
+                  <td>{{product.marca}}</td>
+                  <td>${{product.precio  | number: '1.2-2'}}</td>
+                  <td>
+                    <button (click)="removeProduct(product.codigo)" type="button" class="btn btn-danger btn-sm radius-per ">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>       
+              </tbody>
+              <tbody class="mt-3">  
+                 @if(products.length == 0){ 
+                  <tr>
+                    <td colspan="5" class="text-center">
+                        No hay productos en el carrito
+                    </td>
+                  </tr>    
+                 }
+                </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <h5>Resumen de la compra</h5>
+            <hr/>
+            <div class="d-flex justify-content-between mb-4">
+              <p class="mb-2"> Precio total:</p>
+              <p class="mv-2">${{priceTotal | number: '1.2-2'}}</p>
+            </div>
+
+            <button (click)="saveCart()" [disabled] = "products.length == 0" type="button" class="btn btn-primary btn-sm radius-per">
+              <div class="d-flex justify-content-between">
+                <span>PROCESAR</span>
+              </div>
+            </button>
+
+            <button routerLink="/"  type="button" class="btn btn-primary btn-sm mt-2 radius-per">
+              <div class="d-flex justify-content-between">
+                <span>Seguir agregando productos</span>
+              </div>
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
