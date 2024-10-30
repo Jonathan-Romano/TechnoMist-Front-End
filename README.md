@@ -1,6 +1,6 @@
 # FrontEndTechnomist
 <p align="center">
-<a href="https://www.youtube.com/watch?v=O1oEGcQJSn0"><img src="https://github.com/Jonathan-Romano/Jonathan-Romano/blob/main/assets/TechnoMist.jpg" style="height: 75%; width:75%;"/></center></a></p>
+<a href="https://www.youtube.com/watch?v=O1oEGcQJSn0"><img src="https://github.com/Jonathan-Romano/Jonathan-Romano/blob/main/assets/TechnoMist.png" style="height: 75%; width:75%;"/></center></a></p>
 
 >Descripción: Clickear en la imagen para ver un video de la aplicacion en funcionamiento
 
